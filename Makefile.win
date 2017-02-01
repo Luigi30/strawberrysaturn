@@ -1,0 +1,36 @@
+# Project: SaturnDemo
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = MAIN.o SPRITE.o $(RES)
+LINKOBJ  = MAIN.o SPRITE.o $(RES)
+LIBS =  -m2 -Xlinker -T$(LINKFILE)  -Xlinker -Map -Xlinker $(MAPFILE) -Xlinker -e -Xlinker ___Start -nostartfiles ../../../SGL_302j/LIB_COFF/SGLAREA.O -lcd -lsgl  
+INCS = 
+CXXINCS = 
+BIN  = sl_coff.coff
+CXXFLAGS = $(CXXINCS) -m2 -Wno-deprecated #-fno-rtti -fno-exceptions  
+CFLAGS = $(INCS) -m2  
+RM = rm -f
+OBJDIR=/obj
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before sl_coff.coff all-after
+
+include ../../COMMON/coff.mak
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "sl_coff.coff" $(LIBS)
+
+$(OBJDIR)/MAIN.o: MAIN.c
+	$(CC) -c MAIN.c -o $(OUTDIR)/MAIN.o $(CFLAGS)
+
+$(OBJDIR)/SPRITE.o: SPRITE.c
+	$(CC) -c SPRITE.c -o $(OUTDIR)/SPRITE.o $(CFLAGS)
+

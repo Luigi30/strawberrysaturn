@@ -1,0 +1,63 @@
+/**********************************************
+ *	Copyright(C)SEGA 1995-1996/SYSTEM R&D DEPT
+ *	skull.mdl
+ *	OBJECTS  = 1
+ *	VERTICES = 8
+ *	POLYGONS = 6
+ **********************************************/
+
+/*
+ *	XPDATA : Model00
+ *	VERTICES = 8
+ *	POLYGONS = 6
+ */
+
+POINT	point_Model00[] = {
+	POStoFIXED(-50.0000,-50.0000,-50.0000),
+	POStoFIXED( 50.0000,-50.0000,-50.0000),
+	POStoFIXED( 50.0000, 50.0000,-50.0000),
+	POStoFIXED(-50.0000, 50.0000,-50.0000),
+	POStoFIXED(-50.0000,-50.0000, 50.0000),
+	POStoFIXED( 50.0000,-50.0000, 50.0000),
+	POStoFIXED( 50.0000, 50.0000, 50.0000),
+	POStoFIXED(-50.0000, 50.0000, 50.0000),
+};
+
+POLYGON	polygon_Model00[] = {
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 0, 1, 2, 3),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES( 1, 5, 6, 2),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES( 5, 4, 7, 6),
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES( 4, 0, 3, 7),
+	NORMAL(  0.0000, -1.0000,  0.0000), VERTICES( 0, 4, 5, 1),
+	NORMAL(  0.0000,  1.0000,  0.0000), VERTICES( 2, 6, 7, 3),
+};
+
+ATTR	attribute_Model00[] = {
+	ATTRIBUTE(Single_Plane, SORT_CEN, 0, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 0, C_RGB(31, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 0, C_RGB( 0,31, 0), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 0, C_RGB( 0, 0,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 0, C_RGB(31,31, 0), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 0, C_RGB( 0,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+};
+
+XPDATA	xpdata_Model00[] = {
+	point_Model00, sizeof(point_Model00)/sizeof(POINT),
+	polygon_Model00, sizeof(polygon_Model00)/sizeof(POLYGON),
+	attribute_Model00,
+	NULL,
+};
+
+/*
+ *	OBJECTS = 1
+ */
+
+OBJECT	object_Model00[] = {
+	(PDATA*)xpdata_Model00,
+	TRANSLATION(  0.0000,  0.0000,  0.0000),
+	ROTATION(  0.0000,  0.0000,  0.0000),
+	SCALING(  1.0000,  1.0000,  1.0000),
+	NULL,
+	NULL,
+};
+

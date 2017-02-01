@@ -1,0 +1,125 @@
+/**********************************************
+ *	Copyright(C)SEGA 1995-1996/SYSTEM R&D DEPT
+ *	arrow.mdl
+ *	OBJECTS  = 1
+ *	VERTICES = 30
+ *	POLYGONS = 26
+ **********************************************/
+
+/*
+ *	XPDATA : 0
+ *	VERTICES = 30
+ *	POLYGONS = 26
+ */
+
+POINT	point_ARROW[] = {
+	POStoFIXED(-50.0000, 50.0000, 50.0000),
+	POStoFIXED( 50.0000, 50.0000, 50.0000),
+	POStoFIXED( 50.0000, 50.0000,-50.0000),
+	POStoFIXED(-50.0000, 50.0000,-50.0000),
+	POStoFIXED( 50.0000,-50.0000,-50.0000),
+	POStoFIXED(-50.0000,-50.0000,-50.0000),
+	POStoFIXED( 50.0000,-50.0000, 50.0000),
+	POStoFIXED(-50.0000,-50.0000, 50.0000),
+	POStoFIXED( 12.5000,-50.0000,-12.5000),
+	POStoFIXED( 12.5000,-75.0000,-12.5000),
+	POStoFIXED(-12.5000,-75.0000,-12.5000),
+	POStoFIXED(-12.5000,-50.0000,-12.5000),
+	POStoFIXED(-12.5000,-75.0000, 12.5000),
+	POStoFIXED(-12.5000,-50.0000, 12.5000),
+	POStoFIXED( 12.5000,-75.0000, 12.5000),
+	POStoFIXED( 12.5000,-50.0000, 12.5000),
+	POStoFIXED(  5.0000,-75.0000,-40.0000),
+	POStoFIXED(  5.0000,-100.0000,-40.0000),
+	POStoFIXED( -5.0000,-100.0000,-40.0000),
+	POStoFIXED( -5.0000,-75.0000,-40.0000),
+	POStoFIXED( -5.0000,-88.6000, 40.0000),
+	POStoFIXED( -5.0000,-100.0000, 25.0975),
+	POStoFIXED(  5.0000,-100.0000, 25.0975),
+	POStoFIXED(  5.0000,-88.6000, 40.0000),
+	POStoFIXED( -5.0000,-75.0000, 25.0000),
+	POStoFIXED(  5.0000,-75.0000, 25.0000),
+	POStoFIXED(  5.0000,-86.0000, 40.0000),
+	POStoFIXED( -5.0000,-86.0000, 40.0000),
+	POStoFIXED( -5.0000,-100.0000, 25.0000),
+	POStoFIXED(  5.0000,-100.0000, 25.0000),
+};
+
+POLYGON	polygon_ARROW[] = {
+	NORMAL(  0.0000,  1.0000,  0.0000), VERTICES( 1, 0, 3, 2),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 4, 2, 3, 5),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES( 6, 1, 2, 4),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES( 6, 7, 0, 1),
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES( 7, 5, 3, 0),
+	NORMAL(  0.0000, -1.0000,  0.0000), VERTICES( 6, 4, 5, 7),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 9, 8,11,10),
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES(12,10,11,13),
+	NORMAL(  0.0000, -1.0000,  0.0000), VERTICES(14, 9,10,12),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES(14,15, 8, 9),
+	NORMAL(  0.0000,  1.0000,  0.0000), VERTICES(15,13,11, 8),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES(14,12,13,15),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES(17,16,19,18),
+	NORMAL(  0.0000, -0.7943,  0.6076), VERTICES(21,20,23,22),
+	NORMAL(  0.0000,  1.0000,  0.0000), VERTICES(24,19,16,25),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES(26,23,20,27),
+	NORMAL(  0.0000,  0.8064,  0.5914), VERTICES(27,24,25,26),
+	NORMAL(  0.0000, -1.0000,  0.0000), VERTICES(22,17,18,21),
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES(28,18,19,24),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES(17,29,25,16),
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES(20,20,24,27),
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES(21,21,24,20),
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES(28,28,24,21),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES(26,26,25,23),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES(22,22,25,29),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES(23,23,25,22),
+};
+
+ATTR	attribute_ARROW[] = {
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(20,20,20), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+};
+
+XPDATA	xpdata_ARROW[] = {
+	point_ARROW, sizeof(point_ARROW)/sizeof(POINT),
+	polygon_ARROW, sizeof(polygon_ARROW)/sizeof(POLYGON),
+	attribute_ARROW,
+	NULL,
+};
+
+/*
+ *	OBJECTS = 1
+ */
+
+OBJECT	object_ARROW[] = {
+	(PDATA*)xpdata_ARROW,
+	TRANSLATION(  0.0000,  0.0000,  0.0000),
+	ROTATION(  0.0000,  0.0000,  0.0000),
+	SCALING(  1.0000,  1.0000,  1.0000),
+	NULL,
+	NULL,
+};
+

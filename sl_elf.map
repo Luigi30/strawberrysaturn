@@ -1,0 +1,320 @@
+Archive member included because of file (symbol)
+
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o)
+                              main.o (slInitSystem)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB001.o)
+                              main.o (slTVOn)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglD00.o)
+                              main.o (slDMACopy)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB002.o)
+                              main.o (slColRAMMode)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglF00.o)
+                              main.o (slLocate)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB016.o)
+                              main.o (slBack1ColSet)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglF05.o)
+                              main.o (slPrint)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB071.o)
+                              main.o (slScrPosNbg1)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB015.o)
+                              main.o (slScrAutoDisp)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglC06.o)
+                              main.o (slDispSprite)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglI01.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (slInitSynch)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglA00.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (_builtin_set_imask)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglK01.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (SynchCount)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH00.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (slInitPeripheral)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ00.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (InitSlaveSH)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglA20.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (slInitMatrix)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB000.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (slInitScroll)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ01.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (SlaveControl)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglI00.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (slInitInterrupt)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglC00.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o) (slInitSprite)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglC20.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglC06.o) (SpriteEntry)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglA01.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglC06.o) (sin_tbl)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH02.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH00.o) (smpc_pfr_tbl)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH04.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH00.o) (slComPrmIntBack)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ03.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ01.o) (sbMakeDMATable)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ02.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ01.o) (sbMakePolygon)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ04.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ01.o) (sbMakeSprite)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ05.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ01.o) (sbSortEntry)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH03.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglI00.o) (slSmpcIntBack)
+C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglM01.o)
+                              C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ02.o) (DepthWorkArea)
+C:/Saturn~1/SH_ELF/sh-elf/bin/../lib/gcc/sh-elf/3.4-GNUSH_v0501/m2\libgcc.a(_ashiftrt_n.o)
+                              main.o (__ashrsi3)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+TARGET(coff-sh)
+
+SLSTART         0x0000000006004000       0x30
+                0x0000000006004000                ___Start = .
+ *(SLSTART)
+ SLSTART        0x0000000006004000       0x28 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglI00.o)
+                0x0000000006004002                slStartSGL
+                0x0000000006004000                SGL_Start
+
+.text           0x0000000006004040      0x360
+ *(.text)
+ .text          0x0000000006004040      0x1b0 main.o
+                0x0000000006004040                ss_main
+                0x00000000060041a0                main
+ .text          0x00000000060041f0      0x128 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o)
+                0x00000000060041f0                slInitSystem
+ *fill*         0x0000000006004318 0x600431800000008 00
+ .text          0x0000000006004320       0x80 C:/Saturn~1/SH_ELF/sh-elf/bin/../lib/gcc/sh-elf/3.4-GNUSH_v0501/m2\libgcc.a(_ashiftrt_n.o)
+                0x0000000006004320                __ashrsi3
+ *(.strings)
+                0x00000000060043a0                __etext = .
+
+.rodata         0x00000000060043a0       0xa0
+ *(.rodata)
+ .rodata        0x00000000060043a0       0x94 main.o
+
+SLPROG          0x0000000006004440     0xfc80
+                0x0000000006004440                __slprog_start = .
+ *(SLPROG)
+ SLPROG         0x0000000006004440     0x6540 C:/SaturnOrbit/SGL_302j/lib_coff/sglarea.o
+                0x000000000600445c                SpriteBuf
+                0x0000000006004480                RemainEvent
+                0x000000000600444c                SortList
+                0x000000000600444a                MaxPolygons
+                0x0000000006004468                CommandBuf
+                0x000000000600447c                MaxWorks
+                0x000000000600447e                WorkSize
+                0x0000000006004474                PCM_WkSize
+                0x000000000600446c                CLOfstBuf
+                0x0000000006004580                RemainWork
+                0x0000000006004470                PCM_Work
+                0x0000000006004440                MasterStack
+                0x0000000006004444                SlaveStack
+                0x0000000006004448                MaxVertices
+                0x0000000006004478                MaxEvents
+                0x0000000006004458                Zbuffer
+                0x0000000006004460                SpriteBufSize
+                0x0000000006006980                WorkBuf
+                0x0000000006004454                TransList
+                0x0000000006004464                Pbuffer
+                0x0000000006004450                SortListSize
+                0x000000000600447a                EventSize
+                0x0000000006004980                EventBuf
+ SLPROG         0x000000000600a980       0x20 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB001.o)
+                0x000000000600a980                slTVOn
+                0x000000000600a98a                slTVOff
+ SLPROG         0x000000000600a9a0       0x84 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglD00.o)
+                0x000000000600a9a0                slDMACopy
+                0x000000000600a9a0                slCpuDMACopy
+                0x000000000600a9fa                slCashPurge
+                0x000000000600a9fa                CSH_AllClr
+ *fill*         0x000000000600aa24 0x600aa240000000c 00
+ SLPROG         0x000000000600aa30       0x1e C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB002.o)
+                0x000000000600aa30                slColRAMMode
+ *fill*         0x000000000600aa4e 0x600aa4e00000002 00
+ SLPROG         0x000000000600aa50       0x4e C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglF00.o)
+                0x000000000600aa6a                slLocate
+                0x000000000600aa60                slCurColor
+                0x000000000600aa9c                CurrentScreen
+                0x000000000600aa50                slCurScrn
+ *fill*         0x000000000600aa9e 0x600aa9e00000002 00
+ SLPROG         0x000000000600aaa0        0xc C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB016.o)
+                0x000000000600aaa0                slBack1ColSet
+ *fill*         0x000000000600aaac 0x600aaac00000004 00
+ SLPROG         0x000000000600aab0       0x1c C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglF05.o)
+                0x000000000600aab0                slPrint
+ *fill*         0x000000000600aacc 0x600aacc00000004 00
+ SLPROG         0x000000000600aad0        0xc C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB071.o)
+                0x000000000600aad0                slScrPosNbg1
+ *fill*         0x000000000600aadc 0x600aadc00000004 00
+ SLPROG         0x000000000600aae0      0x40c C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB015.o)
+                0x000000000600aae0                slScrAutoDisp
+ *fill*         0x000000000600aeec 0x600aeec00000004 00
+ SLPROG         0x000000000600aef0       0xfa C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglC06.o)
+                0x000000000600aef0                slDispSprite
+ *fill*         0x000000000600afea 0x600afea00000006 00
+ SLPROG         0x000000000600aff0      0x3a4 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglI01.o)
+                0x000000000600b1da                RetPCMBuf
+                0x000000000600b314                Sound_Buf
+                0x000000000600aff0                slInitSynch
+                0x000000000600b100                slRandom
+                0x000000000600b274                PCM_Buf
+                0x000000000600b00a                slSynch
+                0x000000000600b11e                PCM_EndCheck
+ *fill*         0x000000000600b394 0x600b3940000000c 00
+ SLPROG         0x000000000600b3a0       0x20 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglA00.o)
+                0x000000000600b3b4                get_imask
+                0x000000000600b3a0                set_imask
+                0x000000000600b3a0                _builtin_set_imask
+                0x000000000600b3b4                _builtin_get_imask
+ SLPROG         0x000000000600b3c0      0xfc8 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH00.o)
+                0x000000000600b45c                slSetPortData1
+                0x000000000600b44c                slGetPortData1
+                0x000000000600bc3a                slSetPortMode1
+                0x000000000600be74                Smpc_Status
+                0x000000000600b412                slSetPortDir2
+                0x000000000600ba58                slSmpcCashSend
+                0x000000000600b478                slGetPortSelect1
+                0x000000000600b85e                slIntBackCancel
+                0x000000000600b510                slSetPortExt1
+                0x000000000600bc20                slGetPortMode1
+                0x000000000600bb14                slSmpcCashBlow
+                0x000000000600be04                slRequestCommand
+                0x000000000600bea4                SmpcStatusBuf
+                0x000000000600b466                slSetPortData2
+                0x000000000600b7c6                slSetResultBuffer
+                0x000000000600b4fc                slGetPortExt1
+                0x000000000600b540                slSetPortExt2
+                0x000000000600b3e0                slGetPortDir2
+                0x000000000600b506                slGetPortExt2
+                0x000000000600b892                slClearReset
+                0x000000000600b888                slCheckReset
+                0x000000000600b3e8                slSetPortDir1
+                0x000000000600b4c0                slSetPortSelect2
+                0x000000000600b48c                slSetPortSelect1
+                0x000000000600bc2c                slGetPortMode2
+                0x000000000600b482                slGetPortSelect2
+                0x000000000600b3d8                slGetPortDir1
+                0x000000000600b454                slGetPortData2
+                0x000000000600bbfa                slSetOptimize
+                0x000000000600bbf0                slGetOptimize
+                0x000000000600b6b4                slSmpcDirectAccess
+                0x000000000600be82                Per_Connect1
+                0x000000000600b734                slInitPeripheral
+                0x000000000600b852                slCheckIntBackSet
+                0x000000000600be83                Per_Connect2
+                0x000000000600be7c                Smpc_Peripheral
+                0x000000000600bc78                slSetPortMode2
+                0x000000000600be78                Smpc_Result
+ *fill*         0x000000000600c388 0x600c38800000008 00
+ SLPROG         0x000000000600c390       0x74 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ00.o)
+                0x000000000600c390                InitSlaveSH
+                0x000000000600c3f8                SlaveCommand
+ *fill*         0x000000000600c404 0x600c4040000000c 00
+ SLPROG         0x000000000600c410      0x42c C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglA20.o)
+                0x000000000600c410                slInitMatrix
+                0x000000000600c42e                slUnitMatrix
+                0x000000000600c41a                slPushUnitMatrix
+ *fill*         0x000000000600c83c 0x600c83c00000004 00
+ SLPROG         0x000000000600c840      0xbd0 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglB000.o)
+                0x000000000600c840                slInitScroll
+                0x000000000600caa0                TVSizeTbl
+                0x000000000600c990                setASC_4to8
+                0x000000000600cb20                TVModeTbl
+                0x000000000600c960                setASC_1to8
+                0x000000000600ccf8                SGL_ASCII_CG
+ SLPROG         0x000000000600d410      0x3d0 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ01.o)
+                0x000000000600d410                SlaveControl
+                0x000000000600d7cc                ErasePolygonData
+ SLPROG         0x000000000600d7e0      0x75c C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglI00.o)
+                0x000000000600dad0                slInitInterrupt
+ *fill*         0x000000000600df3c 0x600df3c00000004 00
+ SLPROG         0x000000000600df40      0x134 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglC00.o)
+                0x000000000600df40                slInitSprite
+ *fill*         0x000000000600e074 0x600e0740000000c 00
+ SLPROG         0x000000000600e080       0x40 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglC20.o)
+                0x000000000600e080                SpriteEntry
+ SLPROG         0x000000000600e0c0     0x411e C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglA01.o)
+                0x000000000600e19c                sin_cos_index_tbl
+                0x000000000600e0c0                slSin
+                0x000000000600e1dc                sin_tbl
+                0x000000000600e108                GetSinCos
+                0x000000000600e0e4                slCos
+ *fill*         0x00000000060121de 0x60121de00000002 00
+ SLPROG         0x00000000060121e0      0x470 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH02.o)
+                0x00000000060125d0                smpc_pfr_tbl
+                0x0000000006012610                smpc_ptf_tbl
+ SLPROG         0x0000000006012650       0x60 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH04.o)
+                0x000000000601267a                slComPrmSetTime
+                0x0000000006012650                slComPrmIntBack
+                0x0000000006012664                slComPrmSetMemory
+ SLPROG         0x00000000060126b0      0x140 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ03.o)
+                0x00000000060126b0                sbMakeDMATable
+ SLPROG         0x00000000060127f0     0x12b8 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ02.o)
+                0x0000000006013a24                stvtc_1
+                0x000000000601375c                stvtc_4
+                0x000000000601371c                SetPolygon
+                0x0000000006013814                stvtc_3
+                0x0000000006013a4c                stvtc_0
+                0x0000000006013724                SetPosition
+                0x00000000060129d8                sbCalcPolygon
+                0x0000000006013710                SetTexture
+                0x00000000060127f0                sbMakePolygon
+                0x0000000006013a38                stvtc_2
+ *fill*         0x0000000006013aa8 0x6013aa800000008 00
+ SLPROG         0x0000000006013ab0      0x470 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ04.o)
+                0x0000000006013b74                sbMakeRotSprite
+                0x0000000006013b0e                sbMakeSprite
+ SLPROG         0x0000000006013f20       0x3c C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglJ05.o)
+                0x0000000006013f20                sbSortEntry
+ *fill*         0x0000000006013f5c 0x6013f5c00000004 00
+ SLPROG         0x0000000006013f60       0xf0 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglH03.o)
+                0x0000000006013fc4                slSmpcIntBack
+ SLPROG         0x0000000006014050       0x6a C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglM01.o)
+                0x000000000601407c                slSetDepthTbl
+                0x00000000060140ac                DepthWorkArea
+                0x0000000006014050                slSetDepthLimit
+                0x00000000060140ba                __slprog_end = .
+
+.tors           0x00000000060140c0        0x0
+                0x00000000060140c0                ___ctors = .
+ *(.ctors)
+                0x00000000060140c0                ___ctors_end = .
+                0x00000000060140c0                ___dtors = .
+ *(.dtors)
+                0x00000000060140c0                ___dtors_end = .
+
+.data           0x00000000060140c0     0xc8b0
+ *(.data)
+ .data          0x00000000060140c0       0x24 main.o
+                0x00000000060140c0                attr
+                0x00000000060140dc                tex_spr
+                0x00000000060140cc                pos
+ .data          0x00000000060140e4     0xc80c sprite.o
+                0x00000000060140e4                pic_spr
+                0x00000000060140ec                Sprite
+ .data          0x00000000060208f0       0x80 C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a(sglIc0.o)
+                0x00000000060208f0                IntPrioMask
+                0x0000000006020970                __edata = .
+
+.bss            0x0000000006020970        0x0
+                0x0000000006020970                __bstart = .
+ *(.bss)
+ *(COMMON)
+                0x0000000006020970                __bend = .
+                0x0000000006020970                _end = .
+LOAD C:/SaturnOrbit/SGL_302j/lib_coff/sglarea.o
+LOAD main.o
+LOAD sprite.o
+LOAD C:/SaturnOrbit/SGL_302j/lib_coff\libsgl.a
+LOAD C:/Saturn~1/SH_ELF/sh-elf/bin/../lib/gcc/sh-elf/3.4-GNUSH_v0501/m2\libgcc.a
+LOAD C:/Saturn~1/SH_ELF/sh-elf/bin/../lib/gcc/sh-elf/3.4-GNUSH_v0501/../../../../sh-elf/lib/m2\libc.a
+LOAD C:/Saturn~1/SH_ELF/sh-elf/bin/../lib/gcc/sh-elf/3.4-GNUSH_v0501/m2\libgcc.a
+OUTPUT(sl_elf.coff coff-sh)
+
+.comment        0x0000000000000000       0x40
+ .comment       0x0000000000000000       0x1c main.o
+ .comment       0x000000000000001c       0x1c sprite.o

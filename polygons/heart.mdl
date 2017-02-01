@@ -1,0 +1,95 @@
+POINT	point_Heart[] = {
+	POStoFIXED(-75.0000, 00.0000, 00.0000),
+	POStoFIXED(-75.0000, 00.0000,-50.0000),
+	POStoFIXED(-75.0000, 50.0000, 00.0000),
+	POStoFIXED( 75.0000, 50.0000,-50.0000),
+	
+	POStoFIXED(-56.25, 0.0000, 50.000),
+	POStoFIXED(-56.25, 0.5000, 50.000),
+	POStoFIXED(-37.50, 0.0000,-70.000),
+	POStoFIXED(-37.50, 0.5000,-70.000),
+	
+	POStoFIXED( 0.0000, 0.0000, 100.0000),
+	POStoFIXED( 0.0000, 0.0000, 100.0000),
+	POStoFIXED( 0.0000, 0.0000,-50.000),
+	POStoFIXED( 0.0000, 0.0000,-50.000),
+	
+	POStoFIXED( 0.0000, 50.000, 100.0000),
+	POStoFIXED( 0.0000, 50.000,-50.000),
+	POStoFIXED( 37.500, 0.0000,-70.000),
+	POStoFIXED( 37.500, 50.000,-70.000),
+	
+	POStoFIXED( 56.250, 0.0000, 50.000),
+	POStoFIXED( 56.250, 50.000, 50.000),
+	POStoFIXED( 75.000, 0.0000, 0.0000),
+	POStoFIXED( 75.000, 0.0000,-50.000),
+	
+	POStoFIXED( 75.000, 50.000, 0.0000),
+	POStoFIXED( 75.000, 50.000,-50.000),
+};
+
+POLYGON	polygon_Heart[] = {
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 13, 6, 5, 9),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES(  6, 3, 1, 5),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 19,21,18,17),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 17,18,13,10),
+	
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES(  3, 4, 2, 1),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 7,8,14,12),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 4,8,7,2),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 15,16,22,20),
+	
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 14,8,4,3),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 14,16,15,11),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 20,22,21,19),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 3,6,13,14),
+	
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 11,15,20,19),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 19,17,10,11),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 13,18,21,14),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 22,16,14,21),
+	
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 9,5,1,12),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 2,7,12,1),
+};
+
+ATTR	attribute_Heart[] = {
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, 1, C_RGB(31,31,31), No_Gouraud, CL32KRGB|MESHoff, sprNoflip, UseLight),
+};
+
+XPDATA	xpdata_Heart[] = {
+	point_Heart, sizeof(point_Heart)/sizeof(POINT),
+	polygon_Heart, sizeof(polygon_Heart)/sizeof(POLYGON),
+	attribute_Heart,
+	NULL,
+};
+
+OBJECT	object_Heart[] = {
+	(PDATA*)xpdata_Heart,
+	TRANSLATION(  0.0000,  0.0000,  0.0000),
+	ROTATION(  0.0000,  0.0000,  0.0000),
+	SCALING(  1.0000,  1.0000,  1.0000),
+	NULL,
+	NULL,
+};
