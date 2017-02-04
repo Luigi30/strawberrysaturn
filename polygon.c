@@ -4,6 +4,7 @@
 #include "polygons/heart.mdl"
 #include "polygons/arrow.mdl"
 #include "polygons/jar.mdl"
+#include "polygons/walls.mdl"
 
 #define TEXTURE_OWLOGO		0
 #define TEXTURE_HEART		1
