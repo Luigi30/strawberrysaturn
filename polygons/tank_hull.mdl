@@ -1,0 +1,63 @@
+/**********************************************
+ *	Copyright(C)SEGA 1995-1996/SYSTEM R&D DEPT
+ *	tank_TANK_HULL.mdl
+ *	OBJECTS  = 1
+ *	VERTICES = 8
+ *	POLYGONS = 6
+ **********************************************/
+
+/*
+ *	XPDATA : 0
+ *	VERTICES = 8
+ *	POLYGONS = 6
+ */
+
+POINT	point_TANK_HULL[] = {
+	POStoFIXED(-75.0000,-25.0000,-100.0000),
+	POStoFIXED(-75.0000,-25.0000, 100.0000),
+	POStoFIXED(-75.0000, 25.0000, 100.0000),
+	POStoFIXED(-75.0000, 25.0000,-100.0000),
+	POStoFIXED( 75.0000, 25.0000, 100.0000),
+	POStoFIXED( 75.0000, 25.0000,-100.0000),
+	POStoFIXED( 75.0000,-25.0000, 100.0000),
+	POStoFIXED( 75.0000,-25.0000,-100.0000),
+};
+
+POLYGON	polygon_TANK_HULL[] = {
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES( 1, 0, 3, 2),
+	NORMAL(  0.0000,  1.0000,  0.0000), VERTICES( 4, 2, 3, 5),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES( 6, 1, 2, 4),
+	NORMAL(  0.0000, -1.0000,  0.0000), VERTICES( 6, 7, 0, 1),
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 7, 5, 3, 0),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES( 6, 4, 5, 7),
+};
+
+ATTR	attribute_TANK_HULL[] = {
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12,12,12), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12,12,12), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12,12,12), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12,12,12), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12,12,12), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12,12,12), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+};
+
+XPDATA	xpdata_TANK_HULL[] = {
+	point_TANK_HULL, sizeof(point_TANK_HULL)/sizeof(POINT),
+	polygon_TANK_HULL, sizeof(polygon_TANK_HULL)/sizeof(POLYGON),
+	attribute_TANK_HULL,
+	NULL,
+};
+
+/*
+ *	OBJECTS = 1
+ */
+
+OBJECT	object_TANK_HULL[] = {
+	(PDATA*)xpdata_TANK_HULL,
+	TRANSLATION(  0.0000,  0.0000,  0.0000),
+	ROTATION(  0.0000,  0.0000,  0.0000),
+	SCALING(  1.0000,  1.0000,  1.0000),
+	NULL,
+	NULL,
+};
+

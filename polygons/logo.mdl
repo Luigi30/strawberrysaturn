@@ -1,0 +1,32 @@
+#include "../texture.h"
+
+POINT point_LOGO[] = {
+	POStoFIXED(-80, -80, 0),
+	POStoFIXED( 80, -80, 0),
+	POStoFIXED( 80,  80, 0),
+	POStoFIXED(-80,  80, 0),
+};
+
+POLYGON polygon_LOGO[] = {
+	NORMAL(0.0, 0.0, 1.0), VERTICES(0, 1, 2, 3),
+};
+
+ATTR attribute_LOGO[] = {
+	ATTRIBUTE(Dual_Plane, SORT_CEN, TEXTURE_OWLOGO, No_Palet, No_Gouraud, CL32KRGB|ECdis, sprNoflip, No_Option),
+};
+
+XPDATA	xpdata_LOGO[] = {
+	point_LOGO, sizeof(point_LOGO)/sizeof(POINT),
+	polygon_LOGO, sizeof(polygon_LOGO)/sizeof(POLYGON),
+	attribute_LOGO,
+	NULL,
+};
+
+OBJECT	object_LOGO[] = {
+	(PDATA*)xpdata_LOGO,
+	TRANSLATION(  0.0000,  0.0000,  0.0000),
+	ROTATION(  0.0000,  0.0000,  0.0000),
+	SCALING(  1.0000,  1.0000,  1.0000),
+	NULL,
+	NULL,
+};

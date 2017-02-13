@@ -1,0 +1,63 @@
+/**********************************************
+ *	Copyright(C)SEGA 1995-1996/SYSTEM R&D DEPT
+ *	bullet.mdl
+ *	OBJECTS  = 1
+ *	VERTICES = 8
+ *	POLYGONS = 6
+ **********************************************/
+
+/*
+ *	XPDATA : 0
+ *	VERTICES = 8
+ *	POLYGONS = 6
+ */
+
+POINT	point_BULLET[] = {
+	POStoFIXED( 25.0000, 25.0000,-50.0000),
+	POStoFIXED( 25.0000,-25.0000,-50.0000),
+	POStoFIXED(-25.0000,-25.0000,-50.0000),
+	POStoFIXED(-25.0000, 25.0000,-50.0000),
+	POStoFIXED(-25.0000,-25.0000, 50.0000),
+	POStoFIXED(-25.0000, 25.0000, 50.0000),
+	POStoFIXED( 25.0000,-25.0000, 50.0000),
+	POStoFIXED( 25.0000, 25.0000, 50.0000),
+};
+
+POLYGON	polygon_BULLET[] = {
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 1, 0, 3, 2),
+	NORMAL( -1.0000,  0.0000,  0.0000), VERTICES( 4, 2, 3, 5),
+	NORMAL(  0.0000, -1.0000,  0.0000), VERTICES( 6, 1, 2, 4),
+	NORMAL(  1.0000,  0.0000,  0.0000), VERTICES( 6, 7, 0, 1),
+	NORMAL(  0.0000,  1.0000,  0.0000), VERTICES( 7, 5, 3, 0),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES( 6, 4, 5, 7),
+};
+
+ATTR	attribute_BULLET[] = {
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB( 8, 8, 8), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB( 8, 8, 8), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB( 8, 8, 8), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB( 8, 8, 8), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB( 8, 8, 8), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB( 8, 8, 8), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+};
+
+XPDATA	xpdata_BULLET[] = {
+	point_BULLET, sizeof(point_BULLET)/sizeof(POINT),
+	polygon_BULLET, sizeof(polygon_BULLET)/sizeof(POLYGON),
+	attribute_BULLET,
+	NULL,
+};
+
+/*
+ *	OBJECTS = 1
+ */
+
+OBJECT	object_BULLET[] = {
+	(PDATA*)xpdata_BULLET,
+	TRANSLATION(  0.0000,  0.0000,  0.0000),
+	ROTATION(  0.0000,  0.0000,  0.0000),
+	SCALING(  1.0000,  1.0000,  1.0000),
+	NULL,
+	NULL,
+};
+

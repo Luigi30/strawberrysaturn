@@ -1,5 +1,5 @@
 # source_program
-SRCS = main.c sprite.c polygon.c map.c SCL_FUNC.c
+SRCS = main.c sprite.c polygon.c map.c camera.c object.c SCL_FUNC.c
 
 SYSOBJS = $(SGLLDR)/sglarea.o
 OBJS = $(SRCS:.c=.o)

@@ -1,14 +1,7 @@
 #include    "main.h"
 
-#define		NUM_TEXTURES	4
-#define     BACK_COL_ADR    (VDP2_VRAM_A1 + 0x1fffe)
-#define     SystemWork      0x060ffc00              /* System Variable Address */
-#define     SystemSize      (0x06100000-0x060ffc00) /* System Variable Size */
+#define		NUM_TEXTURES	1
 
-#define		MAX_FILE 512
-
-extern PICTURE  pic_overwatch[];
-extern TEXTURE  tex_overwatch[];
 extern Uint32   _bstart, _bend;
 
 int main(void)
@@ -32,25 +25,45 @@ int main(void)
 	ss_main();
 }
 
-void VDP2_Init(){
-	//Load sprites into VRAM with DMA.
-    set_sprite(pic_overwatch, NUM_TEXTURES);
-    slColRAMMode(CRM16_1024);
-    slBack1ColSet((void *)BACK_COL_ADR, 0);
-    slScrPosNbg1(toFIXED(-32.0), toFIXED(-36.0));
-	slScrAutoDisp(NBG0ON | NBG1ON);
-}
-
 void ss_main(void)
 {
+	//Setup globals
+	g_OBJLIST_WORLDOBJECTS = NULL;
+	
 	//Initialize the Saturn with our texture list.
     slInitSystem(TV_320x224, tex_overwatch, 1);
+	
 	slTVOff();
 	VDP2_Init();
 	slTVOn();
-	
 	GAME_IntroScreen();
 	GAME_Begin();
+}
+
+void VDP2_Init(){
+	//Load sprites into VRAM with DMA.
+	
+    set_sprite(pic_overwatch, NUM_TEXTURES);
+    slColRAMMode(CRM16_1024);
+	
+	//Setup RBG0
+	slRparaInitSet((void *)RBG0_PRA_ADR);
+	slMakeKtable((void *)RBG0_KTB_ADR); //coefficient table for perspective transformations
+	slCharRbg0(COL_TYPE_256, CHAR_SIZE_2x2); //256 colors, 2x2 chars. Set up according to .map file
+	slPageRbg0((void *)RBG0RA_CEL_ADR, (void *)RBG0RA_COL_OFFSET, PNB_1WORD|CN_10BIT); //set up according to .map file
+	slPlaneRA(PL_SIZE_1x1); //Map can be 1x1, 1x2, 2x1, or 2x2 pages
+	sl1MapRA((void *)RBG0RA_MAP_ADR);
+	slOverRA(0); //overflow mode - see manual
+	slKtableRA((void *)RBG0_KTB_ADR, K_FIX | K_DOT | K_2WORD | K_ON);
+	
+	Cel2VRAM(&cel_ground, (void *)RBG0RA_CEL_ADR, 16896);
+	Map2VRAM(&map_ground, (void *)RBG0RA_MAP_ADR, 128/2, 128/2, 1, 0); //fedora_map contains a 32x32 graphic.
+	Pal2CRAM(&pal_ground, (void *)VDP2_COLRAM+RBG0RA_COL_OFFSET, 256);
+	
+	slRparaMode(K_CHANGE);
+	slBack1ColSet((void *)BACK_COL_ADR, CD_DarkBlue);
+	
+	slScrAutoDisp(NBG0ON);
 }
 
 static void set_sprite(PICTURE *pcptr, Uint32 NbPicture)
@@ -73,39 +86,32 @@ static void disp_sprite(int SpriteNo, int rotation)
 	slDispSprite((FIXED *)pos[SpriteNo], (SPR_ATTR *)(&attr[SpriteNo].texno), DEGtoANG(rotation));
 }
 
-void INTRO_DrawLogo(int rotationY){
-	static ANGLE logoAng[XYZ] = { DEGtoANG(0.0), DEGtoANG(0.0), DEGtoANG(0.0) };
-	static FIXED logoPos[XYZ] = { toFIXED(0.0), toFIXED(0.0), toFIXED(220.0) };
-	logoAng[Y] = DEGtoANG(rotationY);
+void WORLD_DrawObjects(NODE_WORLDOBJECT *head){
+	int drawn = 0;
+	char strDrawn[32];
 	
-	slPushMatrix();
-	{
-		slTranslate(logoPos[X], logoPos[Y], logoPos[Z]);
-		slRotX(logoAng[X]);
-		slRotY(logoAng[Y]);
-		slRotZ(logoAng[Z]);
-		slPutPolygon(&PD_PLANE1);
-	}
-	slPopMatrix();
-}
-
-void INTRO_DrawHeart(int x, int y){
-	static ANGLE	ang[XYZ] = { DEGtoANG(0.0), DEGtoANG(0.0), DEGtoANG(0.0) };
-	static FIXED	pos[XYZ];
-	pos[X] = toFIXED(x);
-	pos[Y] = toFIXED(y);
-	pos[Z] = toFIXED(200.0);
+	NODE_WORLDOBJECT *current = head;
 	
-	slPushMatrix();
-	{
-		slTranslate(pos[X], pos[Y], pos[Z]);
-		slRotX(ang[X]);
-		slRotY(ang[Y]);
-		slRotZ(ang[Z]);
-		slScale(toFIXED(0.2), toFIXED(0.2), toFIXED(0.2));
-		slPutPolygon(&PD_SPR_HEART);
+	while(current != NULL)
+	{	
+		drawn++;
+		sprintf(strDrawn, "OBJ: %d", drawn);
+		slPrint(strDrawn, slLocate(3,24));
+		
+		slPushMatrix();
+		{
+			slTranslate(current->payload.position[X], current->payload.position[Y], current->payload.position[Z]);
+			slRotX(current->payload.angle[X]);
+			slRotY(current->payload.angle[Y]);
+			slRotZ(current->payload.angle[Z]);
+			slScale(current->payload.scale[X], current->payload.scale[Y], current->payload.scale[Z]);
+			slPutPolygon(current->payload.polygons);
+		}
+		slPopMatrix();
+		
+		current = current->next;
 	}
-	slPopMatrix();
+	
 }
 
 void GAME_IntroScreen(){	
@@ -114,21 +120,39 @@ void GAME_IntroScreen(){
 	slPrint("Tank Game", slLocate(3,2));
 	slPrint("Press Start", slLocate(3, 25));
 	
+	ANGLE logoAng[XYZ] = { DEGtoANG(0.0), DEGtoANG(0.0), DEGtoANG(0.0) };
+	FIXED logoPos[XYZ] = { toFIXED(0.0), toFIXED(0.0), toFIXED(220.0) };
+	FIXED logoScale[XYZ] = SCALE_1;
+	OBJLIST_InsertHead(&g_OBJLIST_WORLDOBJECTS, "LOGO", logoPos, logoAng, logoScale, (PDATA *)&xpdata_LOGO);
+	
 	while(1)
     {	
 		rotationDegrees = (rotationDegrees + 1) % 360;
 		
 		//TODO: add spinning tank instead of stolen graphic!
-		INTRO_DrawLogo(rotationDegrees);
+		OBJLIST_FindNodeByName(g_OBJLIST_WORLDOBJECTS, "LOGO")->payload.angle[Y] = DEGtoANG(rotationDegrees);
+		WORLD_DrawObjects(g_OBJLIST_WORLDOBJECTS);
 		
 		if((Smpc_Peripheral[0].push & PER_DGT_ST) == 0) { //start button pressed?
 			return; //end intro menu thing
 		}
+
+		slPushMatrix();
+		{	
+			slCurRpara(RA);
+			slUnitMatrix(CURRENT);
+			slTranslate(FX_ZERO, FX_ZERO, toFIXED(400.0));
+			slRotX(DEGtoANG(-30.0));
+			slScrMatConv();
+			slScrMatSet();
+		}
+		slPopMatrix();
 		
 		slSynch();
 	}
 }
 
+/*
 void SCRL_Setup(){
 	//Set up the scroll
 	slColRAMMode(CRM16_1024); //keep CRM16_1024 usually
@@ -147,8 +171,9 @@ void SCRL_Setup(){
 	
 	slScrAutoDisp(NBG0ON | NBG1ON);
 }
+*/
 
-void PRINT_PrintCoordinates(FIXED *pos, ANGLE *ang) {
+void DEBUG_PrintCoordinates(FIXED *pos, ANGLE *ang) {
 	//Draws the object's position and angle on the screen.
 	
 	slPrint("POSITION", slLocate(3,1));
@@ -162,93 +187,150 @@ void PRINT_PrintCoordinates(FIXED *pos, ANGLE *ang) {
 	slPrintFX(slAng2FX(ang[Z]), slLocate(13,4));
 }
 
+void WORLD_DrawArenaWalls(){
+	slTranslate(FX_ZERO, toFIXED(25.0), FX_ZERO);
+	slRotX(DTA_ZERO);
+	slRotY(DTA_ZERO);
+	slRotZ(DTA_ZERO);
+	slScale(toFIXED(1.5), toFIXED(1.0), toFIXED(1.25));
+	slPutPolygon((PDATA *)&xpdata_WALLS);
+}
+
 void GAME_Begin(){
+	OBJLIST_DeleteHead(&g_OBJLIST_WORLDOBJECTS);
+	
 	TEXT_ClearLayer();
 	
-	//Set up the camera.
-	static CAMERA cameraBuffer;
-	{
-		cameraBuffer.pos[X] = FX_ZERO;
-		cameraBuffer.pos[Y] = toFIXED(-400.0);
-		cameraBuffer.pos[Z] = toFIXED(-400.0);
-		
-		cameraBuffer.ang[X] = ZERO[X];
-		cameraBuffer.ang[Y] = ZERO[Y];
-		cameraBuffer.ang[Z] = ZERO[Z];
-		
-		cameraBuffer.target[X] = cameraBuffer.target[Y] = cameraBuffer.target[Z] = FX_ZERO;
-	}
+	CAMERA_Init(&gameState.camera);
 	
-	static ANGLE arrowAng[XYZ] = { DEGtoANG(0.0), DEGtoANG(0.0), DEGtoANG(0.0) };
-	static FIXED arrowPos[XYZ] = { toFIXED(0.0), toFIXED(0.0), toFIXED(0.0) };
+	//rotX needs to match the camera's viewing angle.
+	//for now, assume the points are coplanar since the camera only moves in 2 dimensions
+	ANGLE terrainRotX = slAtan(toFIXED(-400.0), toFIXED(-400.0));
+
+	static FIXED tankHullPos[XYZ] = POS_ORIGIN;
+	static ANGLE tankHullAng[XYZ] = ANG_ZERO;
 	
-	//FIXED fedora_pos_X = SIPOSX;
+	static FIXED turretPos[XYZ] = POS_ORIGIN;
+	static ANGLE turretAng[XYZ] = ANG_ZERO;
+
+	gameState.terrainPos[X] = gameState.terrainPos[Y] = gameState.terrainPos[Z] = FX_ZERO;
+	
 	FIXED forwardSpeed = toFIXED(2.0);
 	
-	int rotationY = 0;
+	int hullRotationY = 0;
+	int turretRotationY = 0;
 	int frameCounter = 0;
 	
 	slPrint("Strawberry Jam!", slLocate(3,25));
 	slPrint("www.itch.io/jam/strawberry-jam/", slLocate(3,26));	
 	
 	//SCRL_Setup();
+	slScrAutoDisp(NBG0ON | RBG0ON);
 	
-	while(1){
+	//Add arena walls to object list
+	{
+		ANGLE ang[XYZ] = { DEGtoANG(0.0), DEGtoANG(0.0), DEGtoANG(0.0) };
+		FIXED pos[XYZ] = { toFIXED(0.0), toFIXED(25.0), toFIXED(0.0) };
+		FIXED scale[XYZ] = { toFIXED(1.5), toFIXED(1.0), toFIXED(1.25) };
+		OBJLIST_InsertHead(&g_OBJLIST_WORLDOBJECTS, "WALLS", pos, ang, scale, (PDATA *)&xpdata_WALLS);
+	}
+	
+	while(1){		
 		frameCounter = (frameCounter + 1) % 60;
 		
 		slUnitMatrix(CURRENT); //Reset the master transformation matrix.
 		
+		//Adjust the camera position if the player is too far away
+		CAMERA_AdjustPositionForPlayerMovement(&gameState.camera, gameState.terrainPos, tankHullPos);
+		
 		//Orient the camera.
-		slLookAt(cameraBuffer.pos, cameraBuffer.target, cameraBuffer.ang[Z]);
+		slLookAt(gameState.camera.pos, gameState.camera.target, gameState.camera.ang[Z]);
 		
-		PRINT_PrintCoordinates(arrowPos, arrowAng);
-		
-		//slScrPosNbg1(fedora_pos_X, toFIXED(0));
-		//fedora_pos_X += POSX_UP;
+		DEBUG_PrintCoordinates(tankHullPos, tankHullAng);
 	
 		//Player's forward vector with magnitude of forwardSpeed.
-		FIXED vec_Forward[XYZ] = { slMulFX(forwardSpeed, slSin(arrowAng[Y])), toFIXED(0.0), slMulFX(forwardSpeed,slCos(arrowAng[Y])) };
+		FIXED vec_Forward[XYZ] = { slMulFX(forwardSpeed, slSin(tankHullAng[Y])), toFIXED(0.0), slMulFX(forwardSpeed,slCos(tankHullAng[Y])) };
 
-		//Handle inputs from control pad 0
+		//Hull rotation
 		if((Smpc_Peripheral[0].data & PER_DGT_KL) == 0){
-			rotationY = (rotationY - 2) % 360;
+			hullRotationY = (hullRotationY - 2) % 360;
 		}
 		if((Smpc_Peripheral[0].data & PER_DGT_KR) == 0){
-			rotationY = (rotationY + 2) % 360;
+			hullRotationY = (hullRotationY + 2) % 360;
 		}
 		if((Smpc_Peripheral[0].data & PER_DGT_KU) == 0){
-			arrowPos[X] = arrowPos[X] + vec_Forward[X];
-			arrowPos[Z] = arrowPos[Z] + vec_Forward[Z];
+			tankHullPos[X] = tankHullPos[X] + vec_Forward[X];
+			tankHullPos[Z] = tankHullPos[Z] + vec_Forward[Z];
 		}
 		if((Smpc_Peripheral[0].data & PER_DGT_KD) == 0){
-			arrowPos[X] = arrowPos[X] - vec_Forward[X];
-			arrowPos[Z] = arrowPos[Z] - vec_Forward[Z];
+			tankHullPos[X] = tankHullPos[X] - vec_Forward[X];
+			tankHullPos[Z] = tankHullPos[Z] - vec_Forward[Z];
+		}
+		
+		/* turret rotation */
+		if((Smpc_Peripheral[0].data & PER_DGT_TL) == 0){
+			turretRotationY = (turretRotationY-2) % 360;
+		}
+		if((Smpc_Peripheral[0].data & PER_DGT_TR) == 0){
+			turretRotationY = (turretRotationY+2) % 360;
+		}
+		
+		/* player tank shell */
+		if((Smpc_Peripheral[0].data & PER_DGT_TA) == 0){
+			slPushMatrix();
+			{
+				slTranslate(tankHullPos[X] + slMulFX(toFIXED(75.0), slSin(tankHullAng[Y])), 
+							toFIXED(-20.0),
+							tankHullPos[Z] + slMulFX(toFIXED(75.0), slCos(tankHullAng[Y])));
+				slRotX(turretAng[X]);
+				slRotY(DEGtoANG(hullRotationY + turretRotationY));
+				slRotZ(turretAng[Z]);
+				slScale(toFIXED(0.20), toFIXED(0.20), toFIXED(0.20));
+				slPutPolygon((PDATA *)&xpdata_BULLET);
+			}
+			slPopMatrix();
 		}
 	
-		//Draw the cute little arrow thing that's a placeholder for the player.
-		arrowAng[Y] = DEGtoANG(rotationY);
+		//draw tank
+		tankHullAng[Y] = DEGtoANG(hullRotationY);
+		turretAng[Y] = DEGtoANG(turretRotationY);
+		
+		//hull's translation matrix
 		slPushMatrix();
 		{
-			slTranslate(arrowPos[X], arrowPos[Y], arrowPos[Z]);
-			slRotX(arrowAng[X]);
-			slRotY(arrowAng[Y]);
-			slRotZ(arrowAng[Z]);
+			slTranslate(tankHullPos[X], tankHullPos[Y], tankHullPos[Z]);
+			slRotX(tankHullAng[X]);
+			slRotY(tankHullAng[Y]);
+			slRotZ(tankHullAng[Z]);
 			slScale(toFIXED(0.5), toFIXED(0.5), toFIXED(0.5));
-			slPutPolygon((PDATA *)&xpdata_ARROW);
+			slPutPolygon((PDATA *)&xpdata_TANK_HULL);
+		}
+		
+		slPushMatrix(); //turret's translation matrix is a child of the hull's translation matrix
+		{
+			slTranslate(turretPos[X], turretPos[Y], turretPos[Z]);
+			slRotX(turretAng[X]);
+			slRotY(turretAng[Y]);
+			slRotZ(turretAng[Z]);
+			slScale(toFIXED(1), toFIXED(1), toFIXED(1));
+			slPutPolygon((PDATA *)&xpdata_TANK_TURRET);	
+		}
+		
+		slPopMatrix(); //done with child matrix
+		slPopMatrix(); //done with parent matrix
+		
+		//Ground layer - RBG0
+		slPushUnitMatrix();
+		{
+			slCurRpara(RA);
+			slTranslate(gameState.terrainPos[X], toFIXED(200), toFIXED(400));
+			slRotX(-terrainRotX);
+			slScrMatConv();
+			slScrMatSet();
 		}
 		slPopMatrix();
 		
-		//Draw the arena walls.
-		slPushMatrix();
-		{
-			slTranslate(ORIGIN[X], toFIXED(25.0), ORIGIN[Z]);
-			slRotX(ZERO[X]);
-			slRotY(ZERO[Y]);
-			slRotZ(ZERO[Z]);
-			slScale(toFIXED(1.5), toFIXED(1.0), toFIXED(1.25));
-			slPutPolygon((PDATA *)&xpdata_WALLS);
-		}
-		slPopMatrix();
+		WORLD_DrawObjects(g_OBJLIST_WORLDOBJECTS);
 		
 		//End frame.
 		slSynch();

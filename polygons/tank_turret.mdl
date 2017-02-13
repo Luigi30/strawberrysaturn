@@ -1,0 +1,141 @@
+/**********************************************
+ *	Copyright(C)SEGA 1995-1996/SYSTEM R&D DEPT
+ *	tank_turret.mdl
+ *	OBJECTS  = 1
+ *	VERTICES = 24
+ *	POLYGONS = 17
+ *	GOUR_REAL= 8
+ **********************************************/
+
+#define	GRreal(n)	(0x1c38+(n))
+GOURAUDTBL	grreal_tank_turret[] = {
+	{C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16)},
+	{C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16)},
+	{C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16)},
+	{C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16)},
+	{C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16)},
+	{C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16)},
+	{C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16)},
+	{C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16),C_RGB(16,16,16)},
+};
+
+/*
+ *	XPDATA : 0
+ *	VERTICES = 24
+ *	POLYGONS = 17
+ */
+
+POINT	point_TANK_TURRET[] = {
+	POStoFIXED( 50.0000,-25.0000,-50.0000),
+	POStoFIXED( 25.0000,-50.0000,-50.0000),
+	POStoFIXED(-25.0000,-50.0000,-50.0000),
+	POStoFIXED(-50.0000,-25.0000,-50.0000),
+	POStoFIXED( 50.0000,-25.0000, 50.0000),
+	POStoFIXED( 25.0000,-50.0000, 50.0000),
+	POStoFIXED(-25.0000,-50.0000, 50.0000),
+	POStoFIXED(-50.0000,-25.0000, 50.0000),
+	POStoFIXED(  7.0711,-44.5711, 150.0000),
+	POStoFIXED(  0.0000,-47.5000, 150.0000),
+	POStoFIXED(  0.0000,-47.5000, 50.0000),
+	POStoFIXED(  7.0711,-44.5711, 50.0000),
+	POStoFIXED( 10.0000,-37.5000, 150.0000),
+	POStoFIXED( 10.0000,-37.5000, 50.0000),
+	POStoFIXED(  7.0711,-30.4289, 150.0000),
+	POStoFIXED(  7.0711,-30.4289, 50.0000),
+	POStoFIXED(  0.0000,-27.5000, 150.0000),
+	POStoFIXED(  0.0000,-27.5000, 50.0000),
+	POStoFIXED( -7.0711,-30.4289, 50.0000),
+	POStoFIXED( -7.0711,-30.4289, 150.0000),
+	POStoFIXED(-10.0000,-37.5000, 50.0000),
+	POStoFIXED(-10.0000,-37.5000, 150.0000),
+	POStoFIXED( -7.0711,-44.5711, 50.0000),
+	POStoFIXED( -7.0711,-44.5711, 150.0000),
+};
+
+POLYGON	polygon_TANK_TURRET[] = {
+	NORMAL(  0.0000,  0.0000, -1.0000), VERTICES( 1, 0, 3, 2),
+	NORMAL(  0.7071, -0.7071,  0.0000), VERTICES( 5, 4, 0, 1),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES( 5, 6, 7, 4),
+	NORMAL( -0.7071, -0.7071,  0.0000), VERTICES( 6, 2, 3, 7),
+	NORMAL(  0.3827, -0.9239,  0.0000), VERTICES( 9, 8,11,10),
+	NORMAL(  0.9239, -0.3827,  0.0000), VERTICES( 8,12,13,11),
+	NORMAL(  0.9239,  0.3827,  0.0000), VERTICES(12,14,15,13),
+	NORMAL(  0.3827,  0.9239,  0.0000), VERTICES(14,16,17,15),
+	NORMAL( -0.3827,  0.9239,  0.0000), VERTICES(19,18,17,16),
+	NORMAL( -0.9239,  0.3827,  0.0000), VERTICES(21,20,18,19),
+	NORMAL( -0.9239, -0.3827,  0.0000), VERTICES(23,22,20,21),
+	NORMAL( -0.3827, -0.9239,  0.0000), VERTICES( 9,10,22,23),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES(23,23, 8, 9),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES(21,12, 8,23),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES(19,14,12,21),
+	NORMAL(  0.0000,  0.0000,  1.0000), VERTICES(19,19,16,14),
+	NORMAL(  0.0000, -1.0000,  0.0000), VERTICES( 5, 1, 2, 6),
+};
+
+ATTR	attribute_TANK_TURRET[] = {
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), GRreal(0), CL32KRGB|MESHoff|CL_Gouraud, sprPolygon, UseGouraud),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), GRreal(1), CL32KRGB|MESHoff|CL_Gouraud, sprPolygon, UseGouraud),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), GRreal(2), CL32KRGB|MESHoff|CL_Gouraud, sprPolygon, UseGouraud),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), GRreal(3), CL32KRGB|MESHoff|CL_Gouraud, sprPolygon, UseGouraud),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), GRreal(4), CL32KRGB|MESHoff|CL_Gouraud, sprPolygon, UseGouraud),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), GRreal(5), CL32KRGB|MESHoff|CL_Gouraud, sprPolygon, UseGouraud),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), GRreal(6), CL32KRGB|MESHoff|CL_Gouraud, sprPolygon, UseGouraud),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), GRreal(7), CL32KRGB|MESHoff|CL_Gouraud, sprPolygon, UseGouraud),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+	ATTRIBUTE(Single_Plane, SORT_CEN, No_Texture, C_RGB(12, 0, 0), No_Gouraud, CL32KRGB|MESHoff, sprPolygon, UseLight),
+};
+
+VECTOR	normal_TANK_TURRET[] = {
+	POStoFIXED(  0.5000, -0.5000, -0.7071),
+	POStoFIXED(  0.3366, -0.8125, -0.4760),
+	POStoFIXED( -0.3366, -0.8125, -0.4760),
+	POStoFIXED( -0.5000, -0.5000, -0.7071),
+	POStoFIXED(  0.5000, -0.5000,  0.7071),
+	POStoFIXED(  0.3366, -0.8125,  0.4760),
+	POStoFIXED( -0.3366, -0.8125,  0.4760),
+	POStoFIXED( -0.5000, -0.5000,  0.7071),
+	POStoFIXED(  0.4798, -0.4798,  0.7345),
+	POStoFIXED(  0.0000, -0.8795,  0.4760),
+	POStoFIXED(  0.0000, -1.0000,  0.0000),
+	POStoFIXED(  0.7071, -0.7071,  0.0000),
+	POStoFIXED(  0.6786,  0.0000,  0.7345),
+	POStoFIXED(  1.0000,  0.0000,  0.0000),
+	POStoFIXED(  0.4798,  0.4798,  0.7345),
+	POStoFIXED(  0.7071,  0.7071,  0.0000),
+	POStoFIXED(  0.0000,  0.8795,  0.4760),
+	POStoFIXED(  0.0000,  1.0000,  0.0000),
+	POStoFIXED( -0.7071,  0.7071,  0.0000),
+	POStoFIXED( -0.4798,  0.4798,  0.7345),
+	POStoFIXED( -1.0000,  0.0000,  0.0000),
+	POStoFIXED( -0.6786,  0.0000,  0.7345),
+	POStoFIXED( -0.7071, -0.7071,  0.0000),
+	POStoFIXED( -0.4798, -0.4798,  0.7345),
+};
+
+XPDATA	xpdata_TANK_TURRET[] = {
+	point_TANK_TURRET, sizeof(point_TANK_TURRET)/sizeof(POINT),
+	polygon_TANK_TURRET, sizeof(polygon_TANK_TURRET)/sizeof(POLYGON),
+	attribute_TANK_TURRET,
+	normal_TANK_TURRET,
+};
+
+/*
+ *	OBJECTS = 1
+ */
+
+OBJECT	object_TANK_TURRET[] = {
+	(PDATA*)xpdata_TANK_TURRET,
+	TRANSLATION(  0.0000,  0.0000,  0.0000),
+	ROTATION(  0.0000,  0.0000,  0.0000),
+	SCALING(  1.0000,  1.0000,  1.0000),
+	NULL,
+	NULL,
+};
+
